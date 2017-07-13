@@ -17,6 +17,10 @@ export class HeroDetailComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+  save(): void {
+    this.heroService.update(this.hero)
+    .then(() => this.goBack());
+  }
   ngOnInit() {
     this.route.paramMap
     .switchMap((params: ParamMap) => this.heroService.getHero(+params.get('id')))
