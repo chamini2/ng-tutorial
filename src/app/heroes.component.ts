@@ -31,7 +31,7 @@ export class HeroesComponent implements OnInit {
         this.selectedHero = null;
       }
       this.heroes = this.heroes.filter((h) => h !== hero);
-    })
+    });
   }
 
   onSelect(hero: Hero): void {
